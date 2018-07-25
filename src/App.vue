@@ -1,28 +1,22 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <add-header></add-header>
+    <home></home>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-
+import addHeader from "./components/common/header/Header.vue";
+import Home from "./components/pages/home/Home.vue";
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    addHeader,
+    Home
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
