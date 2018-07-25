@@ -9,11 +9,14 @@
             enter-active-class="animated slideInLeft"
 			leave-active-class="animated slideOutLeft">
             <nav class="left-nav" v-if="show">
-                <ul>
-                    <li 
-                    v-for="item in navs"
-                    :key="item.id"
-                    >{{item.title}}<i class="fa fa-angle-right"></i></li>
+                <ul @click="$emit('close')">              
+                    <router-link 
+                        tag="li"
+                        v-for="item in navs"
+                        :key="item.id"
+                        :to="item.path"
+                        
+                    >{{item.title}}<i class="fa fa-angle-right"></i></router-link>
                 </ul>
             </nav>  
         </transition>
@@ -30,12 +33,12 @@
 		data() {
 			return {
 				navs : [
-                    {id : 1, title: "首页"},
-                    {id : 2, title: "影片"},
-                    {id : 3, title: "影院"},
-                    {id : 4, title: "商城"},
-                    {id : 5, title: "我的"},
-                    {id : 6, title: "买卡座"},
+                    {id : 1, title: "首页",path:"/home"},
+                    {id : 2, title: "影片",path:"yingpian"},
+                    {id : 3, title: "影院",path:"yingyuan"},
+                    {id : 4, title: "商城",path:"shangcheng"},
+                    {id : 5, title: "我的",path:"wode"},
+                    {id : 6, title: "买卡座",path:"maika"},
 
                 ]
                
@@ -45,10 +48,10 @@
 </script>
 
 <style scopeds lang="scss">
-    .findeOut {
+    .findeOut,.findeIn{
         animation-duration: 0.2s;
     }
-    .slideOutLeft{
+    .slideOutLeft,.slideInLeft{
         animation-duration: 0.3s;
     }
     .nav-list{

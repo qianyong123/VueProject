@@ -46,6 +46,7 @@
         display: block;
         overflow: hidden;
         width:3.2rem;
+        margin-bottom:0.17rem;
         img{
             width:3.2rem;
         }
