@@ -6,6 +6,12 @@ import router from "./router/index.js"
 
 import Vue from 'vue'
 import App from './App'
+// mint-ui 无限滚动、提示
+import { InfiniteScroll, Toast } from 'mint-ui';
+//用Vue调用
+Vue.use(InfiniteScroll);
+Vue.use(Toast);
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

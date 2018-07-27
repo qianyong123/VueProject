@@ -14,7 +14,12 @@
 
             </li>
         </ul>
-        <div class="more-button">更多{{type.title}}电影</div>
+        <router-link 
+         tag="div"
+         class="more-button"
+         to="/yingpian"
+        >更多{{type.title}}电影</router-link>
+        <!-- <div class="more-button">更多{{type.title}}电影</div> -->
     </div>
 </template>
 
@@ -36,7 +41,7 @@
         },
         methods:{
             getMoves(){
-                axios.get("http://localhost:8080/mz/v4/api/film/"+this.type.url_type,{
+                axios.get("/mz/v4/api/film/"+this.type.url_type,{
                     params:{
                         count:this.type.count,
                         page:this.page,
@@ -44,7 +49,7 @@
                     }
                 }).then(res=>{
                     this.moves=res.data.data.films
-                    console.log(res.data.data.films)
+                    // console.log(res.data.data.films)
                 }).catch(data=>{
                     console.log(data);
                 });

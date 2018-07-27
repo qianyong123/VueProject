@@ -34,11 +34,11 @@
 			return {
 				navs : [
                     {id : 1, title: "首页",path:"/home"},
-                    {id : 2, title: "影片",path:"yingpian"},
-                    {id : 3, title: "影院",path:"yingyuan"},
-                    {id : 4, title: "商城",path:"shangcheng"},
-                    {id : 5, title: "我的",path:"wode"},
-                    {id : 6, title: "买卡座",path:"maika"},
+                    {id : 2, title: "影片",path:"/yingpian"},
+                    {id : 3, title: "影院",path:"/yingyuan"},
+                    {id : 4, title: "商城",path:"/shangcheng"},
+                    {id : 5, title: "我的",path:"/wode"},
+                    {id : 6, title: "买卡座",path:"/maika"},
 
                 ]
                

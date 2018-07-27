@@ -22,8 +22,14 @@
         },
         methods:{
            axiosGet(){
-               axios.get("/static/mock/banner.json").then(res=>{
-                   this.banners=res.data
+               axios.get("/mz/v4/api/billboard/home",{
+                   params:{                    
+                       __t:Date.now()
+                   }
+               }).then(res=>{
+                //    console.log(res.data.data);
+                //    console.log(res.data.data.billboards);
+                   this.banners=res.data.data.billboards
                });
            }
         },
@@ -47,6 +53,8 @@
         overflow: hidden;
         width:3.2rem;
         margin-bottom:0.17rem;
+        background: url("/static/img/bcg1.png") no-repeat center center;
+        background-size:3.2rem 1.8rem;
         img{
             width:3.2rem;
         }

@@ -15,7 +15,7 @@
                     <i class="fa fa-user-o"></i>
                 </div>
                 <div class="city">
-                    <span>成都</span>
+                    <span @click="shouwei">成都</span>
                     <i  class="fa fa-angle-down"></i>
                 </div>
             
@@ -30,25 +30,43 @@
 
 <script>
     import NavList from "./NavList.vue";
-    import "animate.css"
+    import "animate.css";
+    // import bus from "../../../js/bus.js";
+    import router from "../../../router/index.js"
 
     export default{
         name:"Header",
         data(){
             return {
-                show:false
+                show:false,
             }
         },
        components:{
            NavList
-       }
+       },
+       methods:{
+           closeList(){
+               this.show=false;
+           },
+           shouwei(){
+               this.$router.push("/add");
+           }
+       },
+       created() {
+        //    bus.$on("close",this.closeList);
+                router.beforeEach((to,from,next)=>{
+                this.closeList();
+                next();
+                console.log(name);
+            });
+       },
     };
 </script>
 
 <style scopeds lang="scss">
         
     .header-nav{
-        width: 3.2rem;
+        width:100%;
         height:0.5rem;
         background: #282828;
         position: fixed;
